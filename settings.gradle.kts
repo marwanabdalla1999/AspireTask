@@ -23,7 +23,7 @@ rootProject.name = "AspireTask"
 include(":app")
 include(":features:searchInGithubRepositoriesFeature")
 include(":domain:searchUseCases")
-include(":data:services:networkServices:searchInGithubRepositoriesService")
+include(":data:services:networkServices:githubRepositoriesService")
 include(":data:repositories")
 include(":core")
 include(":core:core-ui")

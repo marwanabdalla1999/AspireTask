@@ -19,7 +19,7 @@ sealed class SearchGithubRepositoriesContract {
 
     sealed interface RepoUiEffect : ViewSideEffect {
         sealed class ShowError : RepoUiEffect {
-            data object GeneralError : ShowError()
+            data class GeneralError(val message: String? = null) : ShowError()
         }
     }
 

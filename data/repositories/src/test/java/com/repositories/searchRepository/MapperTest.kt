@@ -1,7 +1,7 @@
 package com.repositories.searchRepository
 
 import com.githubRepositoriesService.responses.SearchResponse
-import com.repositories.searchRepository.mappers.toSearchForTrendingGithubRepoEntity
+import com.repositories.githubRepositoriesRepository.mappers.toSearchForTrendingGithubRepoEntity
 import com.searchUseCases.entities.SearchEntity
 import org.junit.Assert.assertEquals
 import org.junit.Test

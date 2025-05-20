@@ -1,16 +1,16 @@
-package com.repositories.searchRepository
+package com.repositories.githubRepositoriesRepository
 
 import com.searchUseCases.entities.SearchEntity
-import com.searchUseCases.repository.ISearchRepository
+import com.searchUseCases.repository.IGithubRepositoriesRepository
 import com.githubRepositoriesService.githubRepositoriesDataSource.IRemoteGithubRepositoriesDataSource
-import com.repositories.searchRepository.mappers.toSearchForTrendingGithubRepoEntity
+import com.repositories.githubRepositoriesRepository.mappers.toSearchForTrendingGithubRepoEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
-class SearchRepositoryImpl(private val remoteGithubRepositoriesDataSource: IRemoteGithubRepositoriesDataSource) :
-    ISearchRepository {
+class GithubRepositoriesRepositoryImpl(private val remoteGithubRepositoriesDataSource: IRemoteGithubRepositoriesDataSource) :
+    IGithubRepositoriesRepository {
 
     override suspend fun searchForRepositories(query: String): Flow<List<SearchEntity>> =
         flow {

@@ -94,7 +94,7 @@ class SearchGithubRepositoriesViewModelTest {
                 assertTrue(effect is SearchGithubRepositoriesContract.RepoUiEffect.ShowError)
                 assertEquals(
                     "API failure",
-                    (effect as SearchGithubRepositoriesContract.RepoUiEffect.ShowError).message
+                    (effect as SearchGithubRepositoriesContract.RepoUiEffect.ShowError.GeneralError).message
                 )
 
                 cancelAndIgnoreRemainingEvents()

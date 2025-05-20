@@ -2,7 +2,8 @@ package com.repositories.searchRepository
 
 import com.githubRepositoriesService.githubRepositoriesDataSource.IRemoteGithubRepositoriesDataSource
 import com.githubRepositoriesService.responses.SearchResponse
-import com.repositories.searchRepository.mappers.toSearchForTrendingGithubRepoEntity
+import com.repositories.githubRepositoriesRepository.GithubRepositoriesRepositoryImpl
+import com.repositories.githubRepositoriesRepository.mappers.toSearchForTrendingGithubRepoEntity
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.flow.first
@@ -12,14 +13,14 @@ import org.junit.Assert.fail
 import org.junit.Before
 import org.junit.Test
 
-class SearchRepositoryImplTest {
+class GithubRepositoriesRepositoryImplTest {
 
-    private lateinit var repository: SearchRepositoryImpl
+    private lateinit var repository: GithubRepositoriesRepositoryImpl
     private val remoteDataSource: IRemoteGithubRepositoriesDataSource = mockk()
 
     @Before
     fun setUp() {
-        repository = SearchRepositoryImpl(remoteDataSource)
+        repository = GithubRepositoriesRepositoryImpl(remoteDataSource)
     }
 
     @Test

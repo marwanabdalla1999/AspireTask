@@ -1,4 +1,4 @@
-package com.coreNetwork.networkClient
+package com.coreNetwork.networkClients
 
 import com.coreNetwork.NetworkConstants.BASE_URL
 import dagger.Module

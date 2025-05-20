@@ -31,7 +31,7 @@
             <option value="$PROJECT_DIR$/data/repositories" />
             <option value="$PROJECT_DIR$/data/services" />
             <option value="$PROJECT_DIR$/data/services/networkServices" />
-            <option value="$PROJECT_DIR$/data/services/networkServices/searchInGithubRepositoriesService" />
+            <option value="$PROJECT_DIR$/data/services/networkServices/githubRepositoriesService" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/domain/searchUseCases" />
             <option value="$PROJECT_DIR$/features" />

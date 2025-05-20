@@ -1,4 +1,4 @@
-package com.repositories.searchRepository.mappers
+package com.repositories.githubRepositoriesRepository.mappers
 
 import com.searchUseCases.entities.SearchEntity
 import com.githubRepositoriesService.responses.SearchResponse

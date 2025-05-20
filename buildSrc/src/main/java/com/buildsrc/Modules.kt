@@ -2,7 +2,7 @@ object Modules {
     const val app = ":app"
     const val searchInGithubRepositoriesFeature = ":features:searchInGithubRepositoriesFeature"
     const val searchUseCases = ":domain:searchUseCases"
-    const val searchInGithubRepositoriesService = ":data:services:networkServices:searchInGithubRepositoriesService"
+    const val searchInGithubRepositoriesService = ":data:services:networkServices:githubRepositoriesService"
     const val repositories = ":data:repositories"
     const val core = ":core"
     const val coreUi = ":core:core-ui"

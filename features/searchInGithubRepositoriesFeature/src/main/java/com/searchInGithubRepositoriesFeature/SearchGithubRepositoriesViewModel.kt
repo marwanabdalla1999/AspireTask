@@ -30,7 +30,7 @@ class SearchGithubRepositoriesViewModel @Inject constructor(
                 setState { copy(isLoading = false, data = reposUiList) }
             }, onError = {
                 setState { copy(isLoading = false) }
-                setEffect { RepoUiEffect.ShowError.GeneralError }
+                setEffect { RepoUiEffect.ShowError.GeneralError(it.message) }
             })
         }
     }

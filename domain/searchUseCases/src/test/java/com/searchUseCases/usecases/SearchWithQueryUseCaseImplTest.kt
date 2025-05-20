@@ -1,7 +1,7 @@
 package com.searchUseCases.usecases
 
 import com.searchUseCases.entities.SearchEntity
-import com.searchUseCases.repository.ISearchRepository
+import com.searchUseCases.repository.IGithubRepositoriesRepository
 import com.searchUseCases.usecases.searchWithQueryUseCase.SearchWithQueryUseCaseImpl
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
@@ -37,7 +37,7 @@ class SearchWithQueryUseCaseImplTest {
         assertEquals(expected, result)
     }
 
-    class FakeSearchRepository : ISearchRepository {
+    class FakeSearchRepository : IGithubRepositoriesRepository {
         private var result: List<SearchEntity> = emptyList()
 
         fun setFakeResult(list: List<SearchEntity>) {

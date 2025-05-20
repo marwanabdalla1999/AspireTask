@@ -1,6 +1,6 @@
 package com.searchInGithubRepositoriesFeature.di
 
-import com.searchUseCases.repository.ISearchRepository
+import com.searchUseCases.repository.IGithubRepositoriesRepository
 import com.searchUseCases.usecases.searchWithQueryUseCase.ISearchWithQueryUseCase
 import com.searchUseCases.usecases.searchWithQueryUseCase.SearchWithQueryUseCaseImpl
 import dagger.Module
@@ -16,7 +16,7 @@ object DiUseCasesModule {
 
     @Singleton
     @Provides
-    fun provideSearchWithQueryUseCase(githubRepositoriesRepository: ISearchRepository): ISearchWithQueryUseCase =
+    fun provideSearchWithQueryUseCase(githubRepositoriesRepository: IGithubRepositoriesRepository): ISearchWithQueryUseCase =
         SearchWithQueryUseCaseImpl(githubRepositoriesRepository)
 
 
