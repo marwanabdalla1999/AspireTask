@@ -10,19 +10,21 @@ import com.searchInGithubRepositoriesFeature.SearchGithubRepositoriesContract.Re
 import com.searchInGithubRepositoriesFeature.SearchGithubRepositoriesContract.RepoUiState
 import com.searchInGithubRepositoriesFeature.SearchGithubRepositoriesContract.RepoUiEffect
 import com.searchInGithubRepositoriesFeature.mappers.toAppRepositoriesModel
+import kotlinx.coroutines.Job
 
 
 @HiltViewModel
 class SearchGithubRepositoriesViewModel @Inject constructor(
     private val searchGithubReposUseCase: ISearchWithQueryUseCase
 ) : BaseViewModel<RepoUiState, RepoUiEvent, RepoUiEffect>() {
-
+    private var job: Job? = null
     override fun setInitialState() = RepoUiState(data = emptyList())
 
 
     private fun searchRepositories(query: String) {
-        viewModelScope.launch {
-            setState { copy(isLoading = true, data = emptyList()) }
+        job?.cancel()
+        job = viewModelScope.launch {
+            setState { copy(isLoading = true) }
             searchGithubReposUseCase(query = query).launchAndCollectResult(onSuccess = { reposList ->
                 val reposUiList = reposList.map { it.toAppRepositoriesModel() }
                 setState { copy(isLoading = false, data = reposUiList) }
@@ -39,6 +41,7 @@ class SearchGithubRepositoriesViewModel @Inject constructor(
             is RepoUiEvent.OnSearchClicked -> {
                 searchRepositories(event.query)
             }
+
             is RepoUiEvent.OnEnterQuery -> setState {
                 copy(
                     query = event.newQuery
