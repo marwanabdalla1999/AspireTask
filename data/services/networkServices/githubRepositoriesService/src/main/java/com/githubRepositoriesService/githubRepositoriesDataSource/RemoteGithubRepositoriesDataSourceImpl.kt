@@ -3,7 +3,6 @@ package com.githubRepositoriesService.githubRepositoriesDataSource
 import com.coreNetwork.NetworkHelper
 import com.githubRepositoriesService.apiService.GithubRepositoriesApiService
 import com.githubRepositoriesService.responses.SearchResponse
-import javax.inject.Inject
 
 class RemoteGithubRepositoriesDataSourceImpl (private val githubRepositoriesApiService: GithubRepositoriesApiService):
     IRemoteGithubRepositoriesDataSource {
